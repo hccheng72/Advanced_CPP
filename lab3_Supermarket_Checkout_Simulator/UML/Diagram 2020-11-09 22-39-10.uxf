@@ -1,0 +1,62 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>380</x><y>20</y><w>220</w><h>290</h></coordinates><panel_attributes>Class CheckOut
+--
+xmlFile : string
+cartFile : string
+barcode : vector&lt;string&gt;
+price :  vector&lt;double&gt;
+ht : HashTable
+charDic : vector&lt;pair&lt;string, char&gt;&gt;
+hexDic : vector&lt;pair&lt;string, char&gt;&gt;
+lanes : vector&lt;queue&lt;Cart&gt;&gt; 
+--
+CheckOut (string, string)
+void getCheckOut()
+string createHex(string&amp;);
+void decToHexDictionary();
+string createName(string&amp;);
+void charDictionary();
+void createHashTable(int);
+int findNextPrime(int);
+int isPrime(int);</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>30</x><y>380</y><w>210</w><h>110</h></coordinates><panel_attributes>Class Files
+--
+filename : string
+--
+Files (string s)
+void readFile(vector&lt;string&gt;&amp;, 
+                      vector&lt;double&gt;&amp;)
+void readFile(vector&lt;queue&lt;Cart&gt;&gt;&amp;)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>130</x><y>340</y><w>30</w><h>60</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>310</x><y>340</y><w>30</w><h>60</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>130</x><y>330</y><w>780</w><h>40</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;760;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>250</x><y>380</y><w>130</w><h>90</h></coordinates><panel_attributes>struct Product
+--
+name : string
+price : double
+hex : string
+barcode : string
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>670</x><y>340</y><w>30</w><h>60</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>570</x><y>380</y><w>220</w><h>180</h></coordinates><panel_attributes>Class HashTable
+--
+hashAry : Node*
+size : int
+count : int
+--
+HashTable()
+HashTable (int)
+void setSize(int n)
+int hash (const string&amp;)
+bool insert(const Product &amp;)
+bool search(Product &amp;, const string &amp;)
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>390</x><y>380</y><w>170</w><h>180</h></coordinates><panel_attributes>Class HashNode
+--
+item : Product
+occupied : int
+noCollisions : int
+--
+HashNode()
+HashNode(Product)
+void setItem(const Product &amp;)
+void setOccupied(int)
+void setNoCollisions(int)
+Product getItem() const
+int getOccupied() const
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>470</x><y>300</y><w>30</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>800</x><y>380</y><w>160</w><h>60</h></coordinates><panel_attributes>struct Cart
+--
+cartNum : int
+productsList : vector&lt;string&gt; </panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>880</x><y>340</y><w>30</w><h>60</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element></diagram>
